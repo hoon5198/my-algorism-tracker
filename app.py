@@ -1,8 +1,21 @@
+# 기존 코드
 import streamlit as st
 
 st.set_page_config(page_title="알고리즘 코드 창고", layout="wide")
 
+# --- UI 숨기기 코드 추가 ---
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+# -------------------------
+
 st.title("💻 알고리즘 코드 기록장")
+# ... 이후 코드 동일 ...
 
 # 1. 데이터 저장 공간 확인
 if "problem_list" not in st.session_state:
